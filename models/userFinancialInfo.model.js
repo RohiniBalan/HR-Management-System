@@ -8,148 +8,64 @@ module.exports = (sequelize, Sequelize) => {
       },
       employmentType: {
         type: Sequelize.ENUM,
-        values: ['FULL_TIME', 'PART_TIME', 'CONTRACT', 'INTERN'],
+        values: ['Full Time', 'Part Time'],
         allowNull: true
       },
       salaryBasic: {
         type: Sequelize.INTEGER,
-        allowNull: true,
-        validate: {
-          min: {
-            args: 0,
-            msg: "Basic salary cannot be negative"
-          }
-        }
+        allowNull: true
       },
       salaryGross: {
         type: Sequelize.INTEGER,
-        allowNull: true,
-        validate: {
-          min: {
-            args: 0,
-            msg: "Gross salary cannot be negative"
-          }
-        }
+        allowNull: true
       },
       salaryNet: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-        validate: {
-          min: {
-            args: 0,
-            msg: "Net salary cannot be negative"
-          }
-        }
+          type: Sequelize.INTEGER,
+          allowNull: true
       },
       allowanceHouseRent: {
         type: Sequelize.INTEGER,
-        allowNull: true,
-        validate: {
-          min: {
-            args: 0,
-            msg: "House rent allowance cannot be negative"
-          }
-        }
+        allowNull: true
       },
       allowanceMedical: {
         type: Sequelize.INTEGER,
-        allowNull: true,
-        validate: {
-          min: {
-            args: 0,
-            msg: "Medical allowance cannot be negative"
-          }
-        }
+        allowNull: true
       },
       allowanceSpecial: {
         type: Sequelize.INTEGER,
-        allowNull: true,
-        validate: {
-          min: {
-            args: 0,
-            msg: "Special allowance cannot be negative"
-          }
-        }
+        allowNull: true
       },
       allowanceFuel: {
         type: Sequelize.INTEGER,
-        allowNull: true,
-        validate: {
-          min: {
-            args: 0,
-            msg: "Fuel allowance cannot be negative"
-          }
-        }
+        allowNull: true
       },
       allowancePhoneBill: {
         type: Sequelize.INTEGER,
-        allowNull: true,
-        validate: {
-          min: {
-            args: 0,
-            msg: "Phone bill allowance cannot be negative"
-          }
-        }
+        allowNull: true
       },
       allowanceOther: {
         type: Sequelize.INTEGER,
-        allowNull: true,
-        validate: {
-          min: {
-            args: 0,
-            msg: "Other allowance cannot be negative"
-          }
-        }
+        allowNull: true
       },
       allowanceTotal: {
         type: Sequelize.INTEGER,
-        allowNull: true,
-        validate: {
-          min: {
-            args: 0,
-            msg: "Total allowance cannot be negative"
-          }
-        }
+        allowNull: true
       },
       deductionProvidentFund: {
         type: Sequelize.INTEGER,
-        allowNull: true,
-        validate: {
-          min: {
-            args: 0,
-            msg: "Provident fund deduction cannot be negative"
-          }
-        }
+        allowNull: true
       },
       deductionTax: {
         type: Sequelize.INTEGER,
-        allowNull: true,
-        validate: {
-          min: {
-            args: 0,
-            msg: "Tax deduction cannot be negative"
-          }
-        }
+        allowNull: true
       },
       deductionOther: {
         type: Sequelize.INTEGER,
-        allowNull: true,
-        validate: {
-          min: {
-            args: 0,
-            msg: "Other deduction cannot be negative"
-          }
-        }
+        allowNull: true
       },
       deductionTotal: {
         type: Sequelize.INTEGER,
-        allowNull: true,
-        validate: {
-          min: {
-            args: 0,
-            msg: "Total deduction cannot be negative"
-          }
-        }
+        allowNull: true
       },
       bankName: {
         type: Sequelize.STRING,
@@ -161,23 +77,11 @@ module.exports = (sequelize, Sequelize) => {
       },
       accountNumber: {
         type: Sequelize.STRING,
-        allowNull: true,
-        validate: {
-          len: {
-            args: [9, 20],
-            msg: "Bank account number must be between 9 and 20 digits"
-          }
-        }
+        allowNull: true
       },
-      ifscCode: {
+      iban: {
         type: Sequelize.STRING,
-        allowNull: true,
-        validate: {
-          is: {
-            args: /^[A-Z]{4}0[A-Z0-9]{6}$/,
-            msg: "IFSC code must be in the format: ABCD0123456 (4 letters, 0, 6 alphanumeric characters)"
-          }
-        }
+        allowNull: true
       }
     }, {
         timestamps: false,

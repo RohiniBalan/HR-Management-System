@@ -94,19 +94,19 @@ export default class SidebarSuperAdmin extends Component {
                   <p>Departments</p>
                 </NavLink>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink to="/superadmin/requisition-list" className="nav-link">
                   <i className="fa fa-list nav-icon" />
                   <p>Requisition List</p>
                 </NavLink>
-              </li>
+              </li> */}
 
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink to="/superadmin/job-applications" className="nav-link">
                   <i className="fa fa-users nav-icon" />
                   <p>Job Applications</p>
                 </NavLink>
-              </li>
+              </li> */}
 
               <li className="nav-item">
                 <NavLink exact to="/onboarding-dashboard" className="nav-link">

@@ -936,7 +936,7 @@ export default class EmployeeEdit extends Component {
                               <option value="HR">HR</option>
                               <option value="PRINCIPAL">principal</option>
                               <option value="HOD">Hod</option>
-                              <option value="SUPER_ADMIN">Super Admin</option>
+                              <option value="SYSTEM_ADMIN">Super Admin</option>
                               <option value="ASSOCIATE_PROFESSOR">
                                 Associate Professor
                               </option>

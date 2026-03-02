@@ -61,12 +61,12 @@ export default class SidebarAdmin extends Component {
                   <p>Employees</p>
                 </NavLink>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink to="/requisition-list-admin" className="nav-link">
                   <i className="fa fa-list nav-icon" />
                   <p>Requisition List</p>
                 </NavLink>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <NavLink exact to="/announcement" className="nav-link">
                   <i className="nav-icon fa fa-bell" />

@@ -61,12 +61,12 @@ export default class SidebarManager extends Component {
                   <p>My Employees</p>
                 </NavLink>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink to="/job-requisition" className="nav-link">
                   <i className="fa fa-file-alt nav-icon" />
                   <p>Job Requisition</p>
                 </NavLink>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <NavLink exact to="/announcement" className="nav-link">
                   <i className="nav-icon fa fa-bell" />

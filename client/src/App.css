@@ -467,7 +467,7 @@ html {
   background: url("/college.jpg") no-repeat center center fixed;
   background-size: cover;
   position: relative;
-  height: 113.5%;
+  height: 140.5%;
   width: 100%;
 }
 
@@ -489,7 +489,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 77px;
+  padding-top: 250px;
 }
 
 /* Box styling */

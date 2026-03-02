@@ -31,7 +31,21 @@ export default class Calendar extends Component {
     this._isMounted = false;
   }
 
-  handleEventClick(info) {
+  // ✅ Added missing method
+  loadUserEvents = () => {
+    axios
+      .get("/api/events") // Replace with your actual API endpoint
+      .then((response) => {
+        if (this._isMounted) {
+          this.setState({ events: response.data });
+        }
+      })
+      .catch((error) => {
+        console.error("Error loading events:", error);
+      });
+  };
+
+  handleEventClick = (info) => {
     this.setState({
       selectedEvent: {
         id: info.event.id,
@@ -40,8 +54,10 @@ export default class Calendar extends Component {
         start: info.event.start,
         end: info.event.end,
       },
+      showModal: true,
+      modalMode: "edit",
     });
-  }
+  };
 
   handleEventPositioned = (info) => {
     info.el.setAttribute(
@@ -58,7 +74,7 @@ export default class Calendar extends Component {
           plugins={[dayGridPlugin, interactionPlugin]}
           initialView="dayGridMonth"
           eventClick={this.handleEventClick}
-          dateClick={() => this.setState({ showAddModel: true })}
+          dateClick={() => this.setState({ showModal: true, modalMode: "add", selectedEvent: null })}
           events={this.state.events}
           eventPositioned={this.handleEventPositioned}
           customButtons={{
@@ -70,11 +86,9 @@ export default class Calendar extends Component {
                   modalMode: "add",
                   selectedEvent: null,
                 }),
-              // Add these classes to match default styling
               classNames: "fc-button fc-button-primary",
             },
           }}
-          // Use BOTH header and headerToolbar for maximum compatibility
           header={{
             left: "prev,next today addEventButton",
             center: "title",
